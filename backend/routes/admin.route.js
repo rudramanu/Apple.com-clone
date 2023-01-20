@@ -48,7 +48,7 @@ adminRouter.post("/login", async (req, res) => {
         if (result) {
           const token = jwt.sign(
             { adminID: admin[0]._id, role: admin[0].role },
-            "coder"
+            "admin"
           );
           res.send({ message: "Logged in successfully", token: token });
         } else {

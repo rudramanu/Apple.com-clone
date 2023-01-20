@@ -6,6 +6,7 @@ const cartSchema = mongoose.Schema({
   image: String,
   colour: String,
   price: String,
+  adminID: String,
   userID: String,
 });
 
