@@ -1,0 +1,39 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", "Helvetica", Arial, sans-serif;
+}
+#navbar {
+  background-color: black;
+  /* border: 1px solid rgb(84, 140, 0); */
+  padding: 10px 40px;
+}
+
+ul {
+  margin: auto;
+  /* border: 1px red solid; */
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  background-color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 150px;
+  padding-right: 150px;
+  margin: 0;
+}
+a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+}
+li {
+  /* border: 1px solid wheat; */
+  display: flex;
+  align-items: center;
+}
