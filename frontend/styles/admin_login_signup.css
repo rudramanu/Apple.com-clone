@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.hero {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+}
+.form-box {
+  width: 380px;
+  height: 480px;
+  position: relative;
+  box-shadow: rgb(106, 106, 106) 0px 5px 15px;
+  margin: 6% auto;
+  background: rgb(255, 255, 255);
+  padding: 5px;
+  overflow: hidden;
+}
+.button-box {
+  width: 235px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.808) 0px 10px 10px;
+  border-radius: 30px;
+}
+.toggle-button {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+#btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 125px;
+  height: 100%;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(0, 0, 0));
+  border-radius: 30px;
+  transition: 0.5s;
+}
+.social-icons {
+  margin: 30px auto;
+  text-align: center;
+}
+.social-icons img {
+  border-radius: 20%;
+  width: 40px;
+  margin: 0 12px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  cursor: pointer;
+}
+.social-icons img:hover {
+  box-shadow: rgba(0, 0, 0, 0.633) 0px 5px 25px;
+  border-radius: 50%;
+}
+.input-group {
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: 0.5s;
+}
+.input-field {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(0, 0, 0));
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+}
+.check-box {
+  margin: 30px 10px 30px 0;
+}
+span {
+  color: rgb(0, 0, 0);
+  font-size: 13px;
+  bottom: 66px;
+  position: absolute;
+}
+#login {
+  left: 50px;
+}
+#register {
+  left: 450px;
+}
+#pass {
+  display: flex;
+  align-items: center;
+
+  /* here */
+  background-color: white;
+  width: 100%;
+  /* padding: 10px 0; */
+  margin: 5px 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 1px solid black;
+  /* outline: none; */
+  background: transparent;
+}
+#pass input {
+  /* here */
+  text-align: center;
+
+  width: 100%;
+  padding: 10px 0;
+
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+#pass img {
+  width: 30px;
+  cursor: pointer;
+}

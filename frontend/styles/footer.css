@@ -28,3 +28,7 @@ hr {
 li {
   margin-bottom: 6px;
 }
+#way_to_admin a {
+  font-weight: bold;
+  color: green;
+}

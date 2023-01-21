@@ -3,13 +3,15 @@ body {
   padding: 0px;
   font-family: "Roboto", "Helvetica", Arial, sans-serif;
 }
-#navbar {
+.navbar {
+  width: 100%;
   background-color: black;
   /* border: 1px solid rgb(84, 140, 0); */
+  position: fixed;
   padding: 10px 40px;
 }
 
-ul {
+#ul {
   margin: auto;
   /* border: 1px red solid; */
   display: flex;
@@ -28,11 +30,11 @@ a {
   color: #ffffff;
 }
 
-img {
+#logo {
   width: 20px;
   height: 20px;
 }
-li {
+#ul li {
   /* border: 1px solid wheat; */
   display: flex;
   align-items: center;

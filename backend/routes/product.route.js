@@ -9,6 +9,21 @@ productRouter.get("/", async (req, res) => {
 
 productRouter.post("/add", async (req, res) => {
   const payload = req.body;
+  const token = req.headers.authorization;
+
+  if (token) {
+    const decoded = jwt.verify(token, "admin");
+    console.log("decoded_new:", decoded);
+    if (decoded) {
+      const adminID = decoded.adminID;
+      req.body.adminID = adminID;
+    } else {
+      console.log("hahahaha");
+      return res.send("You are not authorized");
+    }
+  } else {
+    return res.send("You are not authorized");
+  }
   try {
     const new_product = new ProductModel(payload);
     await new_product.save();
@@ -25,6 +40,21 @@ productRouter.patch("/update/:id", async (req, res) => {
   console.log("product:", product);
   const adminID_in_product = product.adminID;
   const adminID_who_making_request = req.body.adminID;
+  const token = req.headers.authorization;
+
+  if (token) {
+    const decoded = jwt.verify(token, "admin");
+    console.log("decoded_new:", decoded);
+    if (decoded) {
+      const adminID = decoded.adminID;
+      req.body.adminID = adminID;
+    } else {
+      console.log("hahahaha");
+      return res.send("You are not authorized");
+    }
+  } else {
+    return res.send("You are not authorized");
+  }
 
   try {
     if (adminID_who_making_request == adminID_in_product) {
@@ -44,6 +74,21 @@ productRouter.delete("/delete/:id", async (req, res) => {
   const product = await ProductModel.findOne({ _id: id });
   const adminID_in_product = product.adminID;
   const adminID_who_making_request = req.body.adminID;
+  const token = req.headers.authorization;
+
+  if (token) {
+    const decoded = jwt.verify(token, "admin");
+    console.log("decoded_new:", decoded);
+    if (decoded) {
+      const adminID = decoded.adminID;
+      req.body.adminID = adminID;
+    } else {
+      console.log("hahahaha");
+      return res.send("You are not authorized");
+    }
+  } else {
+    return res.send("You are not authorized");
+  }
 
   try {
     if (adminID_who_making_request == adminID_in_product) {

@@ -3,7 +3,9 @@ body {
   margin: 0;
 }
 #first1 {
+  padding: 100px;
   font-size: 56px;
+  color: white;
   font-weight: 600;
   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif;
@@ -11,15 +13,58 @@ body {
   width: 50%;
   margin: auto;
   text-align: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 #first2 {
   margin-bottom: -10px;
   width: 25%;
   margin: auto;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 #first2 img {
   width: 100%;
   margin: auto;
 }
+#first {
+  background-color: black;
+}
+#second1 {
+  margin: auto;
+  /* border: 1px solid red; */
+  width: 60%;
+}
+#second1 img {
+  width: 100%;
+}
+#second {
+  margin: 10px 0px;
+  background-color: black;
+  /* border: 1px solid blue; */
+}
+#third1 {
+  margin: auto;
+  width: 70%;
+}
+#third1 img {
+  width: 100%;
+}
+#third {
+  background-color: black;
+  margin-bottom: 10px;
+}
+#fourth {
+  padding: 0px 10px 10px 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+#fourth div {
+  border: 1px solid red;
+  width: 100%;
+}
+#fourth img {
+  height: 100%;
+  width: 100%;
+}
+
+/* Carousel part here */
