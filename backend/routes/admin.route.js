@@ -10,10 +10,10 @@ adminRouter.post("/register", async (req, res) => {
   try {
     const admin = await RoleModel.find({ email });
     if (admin.length != 0) {
-      return res.send("Already existing!");
+      return res.send({ message: "Already existing!" });
     }
     if (password.length < 8) {
-      return res.send("Password is too short!!");
+      return res.send({ message: "Password is too short!!" });
     }
     bcrypt.hash(password, 5, async (err, encrypt_password) => {
       if (err) {
@@ -28,11 +28,11 @@ adminRouter.post("/register", async (req, res) => {
           role,
         });
         await admin.save();
-        res.send(`${name}'s account has been created.`);
+        return res.send({ message: `${name}'s account has been created` });
       }
     });
   } catch (error) {
-    res.send("Error while registering");
+    return res.send({ message: "Error while registering" });
   }
 });
 
@@ -46,22 +46,19 @@ adminRouter.post("/login", async (req, res) => {
     if (admin.length > 0) {
       bcrypt.compare(password, hashed_password, function (err, result) {
         if (result) {
-          const token = jwt.sign(
-            { adminID: admin[0]._id, role: admin[0].role },
-            "admin"
-          );
-          res.send({ message: "Logged in successfully", token: token });
+          const token = jwt.sign({ adminID: admin[0]._id }, "admin");
+          return res.send({ message: "Logged in successfully", token: token });
         } else {
-          res.send("Wrong credentials");
+          return res.send({ message: "Wrong Credentials" });
         }
       });
     } else {
-      res.send("Wrong credentials");
+      return res.send({ message: "Wrong Credentials" });
     }
     // console.log(user);
   } catch (error) {
     console.log(error);
-    res.send(error);
+    return res.send(error);
   }
 });
 

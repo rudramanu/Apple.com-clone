@@ -5,8 +5,22 @@ const cartRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
 cartRouter.get("/", async (req, res) => {
-  const products = await CartModel.find();
-  res.send(products);
+  const token = req.headers.authorization;
+  console.log(token);
+  if (token) {
+    const decoded = jwt.verify(token, "user");
+    console.log("decoded:", decoded);
+    if (decoded) {
+      const userID = decoded.userID;
+      req.body.userID = userID;
+      const products = await CartModel.find();
+      res.send(products);
+    } else {
+      return res.send("Please login first");
+    }
+  } else {
+    return res.send("Please login first");
+  }
 });
 
 cartRouter.post("/add/:id", async (req, res) => {
@@ -28,7 +42,7 @@ cartRouter.post("/add/:id", async (req, res) => {
       return res.send("Please login first");
     }
   } else {
-    res.send("Please login first");
+    return res.send("Please login first");
   }
 
   try {
@@ -58,7 +72,7 @@ cartRouter.delete("/delete/:id", async (req, res) => {
       return res.send("Please login first");
     }
   } else {
-    res.send("Please login first");
+    return res.send("Please login first");
   }
   const userID_in_product = product.userID;
   console.log(userID_in_product);

@@ -139,7 +139,7 @@ const footer = () => {
         <hr />
         <div id="last">
           <ul style="list-style: none">
-            <li id="way_to_admin"><a href="admin_page.html">&#128522;Admin Section</a></li>
+            <li id="way_to_admin"><a href="admin_login_signup.html">&#128522;Admin Section</a></li>
             <li>Privacy Policy</li>
             <li>|</li>
             <li>Terms of Use</li>

@@ -13,6 +13,7 @@
   position: absolute;
 }
 .form-box {
+  border-radius: 20px;
   width: 380px;
   height: 480px;
   position: relative;

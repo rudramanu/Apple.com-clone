@@ -46,19 +46,20 @@ body {
 }
 .image img {
   width: 300px;
+  height: 300px;
 }
 .image,
 .title,
 .mrp_price {
   margin-bottom: 10px;
 }
-#button {
+.button {
   background-color: #0071e3;
   padding: 10px;
   width: 30%;
   margin: auto;
   border-radius: 15px;
-  /* border: 1px solid black; */
+  /* border: 1px solid rgb(245, 37, 37); */
   font-size: medium;
   font-weight: bold;
   cursor: pointer;
