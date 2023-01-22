@@ -1,6 +1,7 @@
 const express = require("express");
 const { ProductModel } = require("../models/product.model");
 const productRouter = express.Router();
+const jwt = require("jsonwebtoken");
 
 productRouter.get("/", async (req, res) => {
   const products = await ProductModel.find();
@@ -27,7 +28,7 @@ productRouter.post("/add", async (req, res) => {
   try {
     const new_product = new ProductModel(payload);
     await new_product.save();
-    res.send("Product is added to the Database");
+    res.send({ message: "Product is added to the Database" });
   } catch (error) {
     res.send({ Message: "Something went wrong" });
   }
@@ -72,8 +73,7 @@ productRouter.patch("/update/:id", async (req, res) => {
 productRouter.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
   const product = await ProductModel.findOne({ _id: id });
-  const adminID_in_product = product.adminID;
-  const adminID_who_making_request = req.body.adminID;
+
   const token = req.headers.authorization;
 
   if (token) {
@@ -89,7 +89,8 @@ productRouter.delete("/delete/:id", async (req, res) => {
   } else {
     return res.send("You are not authorized");
   }
-
+  const adminID_in_product = product.adminID;
+  const adminID_who_making_request = req.body.adminID;
   try {
     if (adminID_who_making_request == adminID_in_product) {
       await ProductModel.findByIdAndRemove({ _id: id });

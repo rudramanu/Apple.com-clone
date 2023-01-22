@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.navbar {
+  /* border: 1px solid white; */
+  width: 100%;
+  height: 75px;
+  margin: auto;
+}
+
+.content {
+  width: 1200px;
+  height: auto;
+  margin: auto;
+  color: #fff;
+  position: relative;
+}
+
+.content h1 {
+  font-family: "Times New Roman";
+  font-size: 50px;
+  padding-left: 20px;
+  margin-top: 9%;
+  letter-spacing: 2px;
+}
+
+.content span {
+  color: #ff7200;
+  font-size: 65px;
+}
+
+.form {
+  width: 250px;
+  height: 380px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0.8) 50%
+  );
+  position: absolute;
+  top: -20px;
+  left: 870px;
+  transform: translate(0%, -5%);
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.form h2 {
+  width: 285px;
+  font-family: sans-serif;
+  text-align: center;
+  color: #ff7200;
+  font-size: 22px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 2px;
+  padding: 8px;
+}
+
+.form input {
+  width: 300px;
+  height: 50px;
+  background: transparent;
+  border-bottom: 1px solid #ff7200;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 30px;
+  font-family: sans-serif;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #fff;
+  font-family: Arial;
+}
+
+.btnn {
+  width: 300px;
+  height: 50px;
+  background: #ff7200;
+  border: none;
+  margin-top: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.4s ease;
+}
+.btnn:hover {
+  background: #fff;
+  color: #ff7200;
+}
+.btnn a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+/* all are here */
+
+#allstock {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 100px;
+  /* border: 1px solid green; */
+}
+#stocked {
+  gap: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 90%;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+.image img {
+  width: 300px;
+  height: 300px;
+}
+.image,
+.title,
+.mrp_price {
+  margin-bottom: 10px;
+}
+.button {
+  background-color: #0071e3;
+  padding: 10px;
+  width: 30%;
+  margin: auto;
+  border-radius: 15px;
+  /* border: 1px solid rgb(245, 37, 37); */
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+}
+.sub-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  text-align: center;
+  /* border: 1px solid blue; */
+}
+.sub-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}

@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="hero">
+      <div id="navbar"></div>
       <div class="form-box">
         <div class="button-box">
           <div id="btn"></div>
@@ -37,26 +38,38 @@
             alt=""
           />
         </div>
-        <form id="login" action="" class="input-group">
-          <input type="text" class="input-field" placeholder="Email" required />
+        <div id="login" action="" class="input-group">
+          <input
+            id="logemail"
+            type="text"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
           <div id="pass">
             <input
-              id="password"
+              id="logpassword"
               type="password"
               class="input-fieldd"
               placeholder="Enter Password"
               required
             />
-            <img src="./images/closed_eye.png" alt="" id="eyeicon" />
           </div>
           <input type="checkbox" class="check-box" /><span
             >Remember Password</span
           >
           <button id="lgn" type="submit" class="submit-btn">Login</button>
-        </form>
-        <form id="register" action="" class="input-group">
-          <input type="text" class="input-field" placeholder="Name" required />
+        </div>
+        <div id="register" action="" class="input-group">
           <input
+            id="regname"
+            type="text"
+            class="input-field"
+            placeholder="Name"
+            required
+          />
+          <input
+            id="regemail"
             type="email"
             class="input-field"
             placeholder="Email"
@@ -65,19 +78,18 @@
 
           <div id="pass">
             <input
-              id="password"
+              id="regpassword"
               type="password"
               class="input-fieldd"
               placeholder="Enter Password"
               required
             />
-            <img src="./images/closed_eye.png" alt="" id="eyeicon" />
           </div>
           <input type="checkbox" class="check-box" /><span
             >I agree to the terms & conditions</span
           >
           <button id="rgst" type="submit" class="submit-btn">Register</button>
-        </form>
+        </div>
       </div>
     </div>
   </body>
@@ -99,17 +111,5 @@
     y.style.left = "450px";
     z.style.left = "0px";
   }
-
-  let eyeicon = document.getElementById("eyeicon");
-  let password = document.getElementById("password");
-
-  eyeicon.onclick = function () {
-    if (password.type == "password") {
-      password.type = "text";
-      eyeicon.src = "./images/opened_eye.png";
-    } else if (password.type == "text") {
-      password.type = "password";
-      eyeicon.src = "./images/closed_eye.png";
-    }
-  };
 </script>
+<script type="module" src="./scripts/user_login_signup.js"></script>

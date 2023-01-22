@@ -23,7 +23,7 @@ let append = (data) => {
 
     let img = document.createElement("img");
     img.setAttribute("class", "phones");
-    img.src = el.url;
+    img.src = el.image;
 
     div1.append(img);
 
@@ -157,7 +157,7 @@ let append = (data) => {
         p2.innerText = n;
       }
       if (n >= 5) {
-        alert("You Can't Add More Than 10 Products of Same Type!!!");
+        alert("You Can't Add More Than 4 Products of Same Type!!!");
       }
     });
     div5r.append(div5r1, div5r2, div5r3);
@@ -183,64 +183,58 @@ let append = (data) => {
     disc_msg.style.color = "green";
   }
 };
-// async function get_cart_data() {
-//   let res = await fetch("url");
-//   let data = await res.json();
-//   append(data);
+async function get_cart_data() {
+  let res = await fetch("http://localhost:1050/cart/", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: localStorage.getItem("usertoken"),
+    },
+  });
+  let data = await res.json();
+  append(data);
 
-//   let payment = document.getElementById("chkout");
-//   payment.addEventListener("click", () => {
-//     window.location.href = "payment.html";
-//   });
-// }
-// get_cart_data();
+  let payment = document.getElementById("chkout");
+  payment.addEventListener("click", () => {
+    window.location.href = "payment.html";
+  });
+}
+get_cart_data();
 
-// async function del_cart_Data(id) {
-//   await fetch("url", {
-//     method: "DELETE",
-//   });
-//   document.location.reload();
-// }
-let data = [
-  {
-    _id: "63ca292e85e61ea4fbd71c41",
-    status: "new",
-    name: "IPHONE 30 PRO MAX",
-    url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
-    colour: "red green blue",
-    price: "379000",
-  },
-  {
-    _id: "63ca292e85e61ea4fbd71c41",
-    status: "new",
-    name: "IPHONE 30 PRO MAX",
-    url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
-    colour: "red green blue",
-    price: "379000",
-  },
-  {
-    _id: "63ca292e85e61ea4fbd71c41",
-    status: "new",
-    name: "IPHONE 30 PRO MAX",
-    url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
-    colour: "red green blue",
-    price: "379000",
-  },
-  {
-    _id: "63ca292e85e61ea4fbd71c41",
-    status: "new",
-    name: "IPHONE 30 PRO MAX",
-    url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
-    colour: "red green blue",
-    price: "379000",
-  },
-  {
-    _id: "63ca292e85e61ea4fbd71c41",
-    status: "new",
-    name: "IPHONE 30 PRO MAX",
-    url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
-    colour: "red green blue",
-    price: "379000",
-  },
-];
-append(data);
+async function del_cart_Data(id) {
+  await fetch(`http://localhost:1050/cart/delete/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: localStorage.getItem("usertoken"),
+    },
+  });
+  document.location.reload();
+}
+// let data = [
+//   {
+//     _id: "63ca292e85e61ea4fbd71c41",
+//     status: "new",
+//     name: "IPHONE 30 PRO MAX",
+//     url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
+//     colour: "red green blue",
+//     price: "379000",
+//   },
+//   {
+//     _id: "63ca292e85e61ea4fbd71c41",
+//     status: "new",
+//     name: "IPHONE 30 PRO MAX",
+//     url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
+//     colour: "red green blue",
+//     price: "379000",
+//   },
+//   {
+//     _id: "63ca292e85e61ea4fbd71c41",
+//     status: "new",
+//     name: "IPHONE 30 PRO MAX",
+//     url: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg",
+//     colour: "red green blue",
+//     price: "379000",
+//   },
+// ];
+// append(data);

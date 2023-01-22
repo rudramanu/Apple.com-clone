@@ -31,7 +31,7 @@ const navbar = () => {
             <a href="">iPad</a>
           </li>
           <li>
-            <a href="">iPhone</a>
+            <a href="./iphone_page.html">iPhone</a>
           </li>
           <li>
             <a href="">Watch</a>
@@ -55,7 +55,7 @@ const navbar = () => {
             <a href="user_login_signup.html">Sign In</a>
           </li>
           <li>
-            <a href="#" class="fas fa-shopping-bag"></a>
+            <a href="./cart.html" class="fas fa-shopping-bag"></a>
           </li>
         </ul>
       </div>
