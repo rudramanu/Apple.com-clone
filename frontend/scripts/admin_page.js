@@ -4,7 +4,7 @@ document.getElementById("footer").innerHTML = footer();
 let allstock = document.querySelector("#stocked");
 
 async function stockpage() {
-  let api = "http://localhost:1050/products/";
+  let api = "https://long-goat-raincoat.cyclic.app/products/";
   let res = await fetch(api);
   let data = await res.json();
   append(data);
@@ -57,7 +57,7 @@ let append = (data) => {
   });
 };
 async function deletefromstock(id) {
-  await fetch(`http://localhost:1050/products/delete/${id}`, {
+  await fetch(`https://long-goat-raincoat.cyclic.app/products/delete/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -83,7 +83,7 @@ async function addtostock() {
   };
   console.log(obj);
 
-  let api = "http://localhost:1050/products/add";
+  let api = "https://long-goat-raincoat.cyclic.app/products/add";
   let data = await fetch(api, {
     method: "POST",
     body: JSON.stringify(obj),

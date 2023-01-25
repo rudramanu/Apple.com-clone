@@ -13,7 +13,7 @@ cartRouter.get("/", async (req, res) => {
     if (decoded) {
       const userID = decoded.userID;
       req.body.userID = userID;
-      const products = await CartModel.find();
+      const products = await CartModel.find({ userID });
       res.send(products);
     } else {
       return res.send("Please login first");

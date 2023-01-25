@@ -16,7 +16,7 @@ async function loginuser() {
     password: password,
   };
   //   console.log(obj);
-  let api = "http://localhost:1050/users/login";
+  let api = "https://long-goat-raincoat.cyclic.app/users/login";
   let data = await fetch(api, {
     method: "POST",
     body: JSON.stringify(obj),
@@ -31,7 +31,8 @@ async function loginuser() {
     localStorage.setItem("usertoken", res.token);
     alert(res.message);
     setTimeout(function () {
-      window.location.href = "./homepage.html";
+      window.location.href = "./index.html";
+      // document.getElementById("user_name").innerText = "Welcome";
     }, 2000);
   } else {
     alert(res.message);
@@ -54,7 +55,7 @@ async function registeruser() {
   };
 
   console.log(obj);
-  let api = "http://localhost:1050/users/register";
+  let api = "https://long-goat-raincoat.cyclic.app/users/register";
   let data = await fetch(api, {
     method: "POST",
     body: JSON.stringify(obj),

@@ -16,7 +16,7 @@ async function loginadmin() {
     password: password,
   };
   //   console.log(obj);
-  let api = "http://localhost:1050/admins/login";
+  let api = "https://long-goat-raincoat.cyclic.app/admins/login";
   let data = await fetch(api, {
     method: "POST",
     body: JSON.stringify(obj),
@@ -55,7 +55,7 @@ async function registeradmin() {
   };
 
   console.log(obj);
-  let api = "http://localhost:1050/admins/register";
+  let api = "https://long-goat-raincoat.cyclic.app/admins/register";
   let data = await fetch(api, {
     method: "POST",
     body: JSON.stringify(obj),

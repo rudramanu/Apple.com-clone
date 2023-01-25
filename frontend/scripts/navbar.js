@@ -17,7 +17,7 @@ const navbar = () => {
       <div class="navbar">
         <ul id="ul">
           <li>
-            <a href="./homepage.html"
+            <a href="./index.html"
               ><img id="logo" src="./images/Byte.png" alt=""
             /></a>
           </li>
@@ -52,7 +52,7 @@ const navbar = () => {
             <a href="">Support</a>
           </li>
           <li>
-            <a href="user_login_signup.html">Sign In</a>
+            <a id="user_name" href="user_login_signup.html">Sign In</a>
           </li>
           <li>
             <a href="./cart.html" class="fas fa-shopping-bag"></a>

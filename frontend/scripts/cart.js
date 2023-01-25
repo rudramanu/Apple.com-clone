@@ -130,9 +130,15 @@ let append = (data) => {
 
     plus.addEventListener("click", () => {
       n++;
+      if (n <= 4) {
+        p2.innerText = n;
+      }
+      if (n > 4) {
+        return alert("You Can't Add More Than 4 Products of Same Type!!!");
+      }
       price.innerText = `Rs. ${+el.price * n}.00/-`;
 
-      MRP.innerText = `Rs. ${(+el.price + 9900) * n}.00/-`;
+      MRPprice.innerText = `Rs. ${(+el.price + 9900) * n}.00/-`;
       total = total + +el.price * n;
       totalMRP = totalMRP + (+el.price + 9900);
       discount = discount + 9900;
@@ -153,38 +159,15 @@ let append = (data) => {
         disc_msg.innerText = `Yay!! you just saved Rs. ${discount}/- 🎉🎉`;
         disc_msg.style.color = "green";
       }
-      if (n <= 4) {
-        p2.innerText = n;
-      }
-      if (n >= 5) {
-        alert("You Can't Add More Than 4 Products of Same Type!!!");
-      }
     });
     div5r.append(div5r1, div5r2, div5r3);
     div5.append(div5l, div5r);
     div.append(div1, div2, div3, div4, div5);
     phone_in_cart.append(div);
   });
-  let totalmrp = document.getElementById("itm_total");
-  totalmrp.innerText = `Rs. ${totalMRP}/-`;
-
-  let priceDiscount = document.getElementById("ttl_dsc1");
-  priceDiscount.innerText = `- Rs. ${discount}/-`;
-
-  let subTotal = document.getElementById("ttl");
-  subTotal.innerText = `Rs. ${totalMRP - discount}/-`;
-
-  let totalSaving = document.getElementById("ttl_dsc");
-  totalSaving.innerText = `Rs. ${discount}/-`;
-
-  let disc_msg = document.querySelector("#discount_msg div");
-  if (data.length >= 1) {
-    disc_msg.innerText = `Yay!! you just saved Rs. ${discount}/- 🎉🎉`;
-    disc_msg.style.color = "green";
-  }
 };
 async function get_cart_data() {
-  let res = await fetch("http://localhost:1050/cart/", {
+  let res = await fetch("https://long-goat-raincoat.cyclic.app/cart/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -202,7 +185,7 @@ async function get_cart_data() {
 get_cart_data();
 
 async function del_cart_Data(id) {
-  await fetch(`http://localhost:1050/cart/delete/${id}`, {
+  await fetch(`https://long-goat-raincoat.cyclic.app/cart/delete/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

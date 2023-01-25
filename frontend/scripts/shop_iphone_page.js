@@ -7,7 +7,7 @@ document.getElementById("footer").innerHTML = footer();
 let allphone = document.querySelector("#alliphone");
 
 async function homepage() {
-  let api = "http://localhost:1050/homepage/gethomepage";
+  let api = "https://long-goat-raincoat.cyclic.app/homepage/gethomepage";
   let res = await fetch(api);
   let data = await res.json();
   // console.log(data);
@@ -60,7 +60,7 @@ let append = (data) => {
   });
 };
 async function addToCart(id) {
-  await fetch(`http://localhost:1050/cart/add/${id}`, {
+  await fetch(`https://long-goat-raincoat.cyclic.app/cart/add/${id}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
