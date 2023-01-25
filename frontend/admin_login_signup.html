@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/user_login_signup.css" />
+    <title>login/registration page</title>
+  </head>
+  <body>
+    <div class="hero">
+      <div id="navbar"></div>
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button type="button" class="toggle-button" onclick="login()">
+            Log In
+          </button>
+          <button type="button" class="toggle-button" onclick="register()">
+            Registration
+          </button>
+        </div>
+        <div class="social-icons">
+          <img
+            src="https://findicons.com/files/icons/2846/20_social_icons/128/facebook.png"
+            alt=""
+          />
+          <img
+            src="https://findicons.com/files/icons/2846/20_social_icons/128/instagram.png"
+            alt=""
+          />
+          <img
+            src="https://findicons.com/files/icons/2846/20_social_icons/128/twitter.png"
+            alt=""
+          />
+          <img
+            src="https://findicons.com/files/icons/2846/20_social_icons/128/email.png"
+            alt=""
+          />
+        </div>
+        <div id="login" action="" class="input-group">
+          <input
+            id="logemail"
+            type="text"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
+          <div id="pass">
+            <input
+              id="logpassword"
+              type="password"
+              class="input-fieldd"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+          <input type="checkbox" class="check-box" /><span
+            >Remember Password</span
+          >
+          <button id="lgn" type="submit" class="submit-btn">Login</button>
+        </div>
+        <div id="register" action="" class="input-group">
+          <input
+            id="regname"
+            type="text"
+            class="input-field"
+            placeholder="Name"
+            required
+          />
+          <input
+            id="regemail"
+            type="email"
+            class="input-field"
+            placeholder="Email"
+            required
+          />
+
+          <div id="pass">
+            <input
+              id="regpassword"
+              type="password"
+              class="input-fieldd"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+          <input type="checkbox" class="check-box" /><span
+            >I agree to the terms & conditions</span
+          >
+          <button id="rgst" type="submit" class="submit-btn">Register</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let x = document.getElementById("login");
+  let y = document.getElementById("register");
+  let z = document.getElementById("btn");
+
+  function register() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+  }
+
+  function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+  }
+</script>
+<script type="module" src="./scripts/admin_login_signup.js"></script>
