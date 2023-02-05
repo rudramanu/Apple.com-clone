@@ -17,9 +17,10 @@ app.use("/users", userRouter);
 app.use("/cart", cartRouter);
 
 app.use("/admins", adminRouter);
+
 app.use("/products", productRouter);
 
-app.listen(1050, async () => {
+app.listen(process.env.port, async () => {
   try {
     await connection;
     console.log("connected to db");

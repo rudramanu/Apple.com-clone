@@ -59,6 +59,7 @@ let append = (data) => {
     allphone.append(div);
   });
 };
+
 async function addToCart(id) {
   await fetch(`http://localhost:1050/cart/add/${id}`, {
     method: "POST",
